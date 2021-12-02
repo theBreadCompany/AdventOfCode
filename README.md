@@ -13,6 +13,7 @@ All my code is called using ```swift <swiftfile> $(cat input)``` where input is 
 | andi_makes       | Rust       | [Link](https://github.com/andi-makes/aoc2021)                 |
 | LeMoonStar       | Rust       | [Link](https://github.com/LeMoonStar/AoC21)                   |
 | networkException | TypeScript | [Link](https://github.com/networkException/AdventOfCode)      |
+| Gewi             | Kotlin     | [Link](https://github.com/Gewi413/AdventOfCode)               |
 | derNiklaas       | Kotlin     | [Link](https://github.com/derNiklaas/Advent-Of-Code-2021)     |
 | joblo2213        | Java       | [Link](https://github.com/joblo2213/AdventOfCode2021)         |
 | Hax              | Java       | [Link](https://github.com/Schlauer-Hax/advent-of-code)        |
