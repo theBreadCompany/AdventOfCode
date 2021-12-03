@@ -1,6 +1,6 @@
 # AdventOfCode
 
-![](https://img.shields.io/badge/Language-Swift-orange) ![](https://img.shields.io/badge/days%20completed-2-green) ![](https://img.shields.io/badge/stars%20⭐-4-yellow)
+![](https://img.shields.io/badge/Language-Swift-orange) ![](https://img.shields.io/badge/days%20completed-3-green) ![](https://img.shields.io/badge/stars%20⭐-6-yellow)
 
 Welcome to my AoC repo, have fun looking at my bloated but working solutions.
 
