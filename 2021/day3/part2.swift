@@ -1,35 +1,26 @@
-var binNums = CommandLine.arguments.compactMap { $0.contains("0") ? $0 : nil }
+var binNums = CommandLine.arguments.filter { $0.contains("0") }
+var oxygen = ""
+var carbondioxide = oxygen
 
-var oxigen = binNums
-var carbondioxide = binNums
-
-var i = 0
-while oxigen.count > 1 {
-    if getCommon(from: oxigen, in: i) >= 0 {
-        oxigen = oxigen.filter { $0[i] == "1" }
-    } else {
-        oxigen = oxigen.filter { $0[i] == "0" }
+for run in 0...1 {
+    var _binNums = binNums
+    for i in 0..._binNums.first!.count-1 {
+        if _binNums.count > 1 {
+            var count = 0
+            for val in _binNums {
+                count += (val[i] == "1") ? 1 : -1
+            }
+            if run == 0 {
+                _binNums = _binNums.filter { $0[i] == (count >= 0 ? "1" : "0") }
+                if _binNums.count == 1 { oxygen = _binNums.first! }
+            } else {
+                _binNums = _binNums.filter { $0[i] == (count < 0 ? "1" : "0") }
+                if _binNums.count == 1 { carbondioxide = _binNums.first! }
+            }
+        }
     }
-    i += 1
 }
-
-i = 0
-while carbondioxide.count > 1 {
-    if getCommon(from: carbondioxide, in: i) < 0 {
-        carbondioxide = carbondioxide.filter { $0[i] == "1" }
-    } else {
-        carbondioxide = carbondioxide.filter { $0[i] == "0" }
-    }
-    i += 1
-}
-
-print(Int(oxigen.first!, radix: 2)!*Int(carbondioxide.first!, radix: 2)!)
-
-func getCommon(from data: [String], in col: Int) -> Int {
-    var count = 0
-    data.forEach { count += ($0[col] == "1") ? 1 : -1 }
-    return count
-}
+print(Int(oxygen, radix: 2)!*Int(carbondioxide, radix: 2)!)
 
 extension String {
     subscript(pos: Int) -> String {
