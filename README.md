@@ -4,7 +4,9 @@
 
 Welcome to my AoC repo, have fun looking at my bloated but working solutions.
 
-All my code is called using ```swift <swiftfile> $(cat input)``` where input is a simple text file containing the nescessary data.
+You may want to run:
+- (all) tests via ```swift test``` or
+- run a single puzzle via ```swift run AdventOfCode 2021 6 2```. 
 
 ## Check out other solutions
 
