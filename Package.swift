@@ -14,7 +14,7 @@ let package = Package(
             dependencies: ["Days"]),
         .target(
             name: "Days",
-            resources: Array(1...6).map({.process("2021/Input/day\($0).txt")})),
+            resources: Array(1...7).map({.process("2021/Input/day\($0).txt")})),
         .testTarget(
             name: "AdventOfCodeTests",
             dependencies: ["AdventOfCode", "Days"]),
