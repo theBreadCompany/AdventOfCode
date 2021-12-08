@@ -26,8 +26,7 @@ extension Day {
             solved.updateValue(hints.first(where: {$0.count == 7})!, forKey: 8)
             solved.updateValue(hints.first(where: {solved[1]!.toSet().isSubset(of: $0.toSet()) && $0.toSet().count == 5})!, forKey: 3)
             solved.updateValue(hints.first(where: {solved[3]!.toSet().isSubset(of: $0.toSet()) && $0.toSet().count == 6})!, forKey: 9)
-            let constructed0 = solved[8]!.toSet().subtracting(solved[4]!.toSet()).union(solved[1]!.toSet()).union(solved[8]!.toSet().subtracting(solved[3]!.toSet()))
-            solved.updateValue(hints.first(where: {$0.toSet() == constructed0})!, forKey: 0)
+            solved.updateValue(hints.first(where: {$0.toSet() == solved[8]!.toSet().subtracting(solved[4]!.toSet()).union(solved[1]!.toSet()).union(solved[8]!.toSet().subtracting(solved[3]!.toSet()))})!, forKey: 0)
             
             var _hints = hints.filter({!solved.values.map({$0.toSet()}).contains($0.toSet())})
             solved.updateValue(_hints.first(where: {$0.count == 6})!, forKey: 6)
