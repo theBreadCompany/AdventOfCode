@@ -34,6 +34,8 @@ public class Day: NSObject {
             return part == 1 ? self.day6part1() : self.day6part2()
         case 7:
             return part == 1 ? self.day7part1() : self.day7part2()
+        case 8:
+            return part == 1 ? self.day8part1() : self.day8part2()
         default:
             fatalError("Day \(value) and/or \(part) not existing")
         }
