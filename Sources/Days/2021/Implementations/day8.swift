@@ -1,4 +1,11 @@
-import Darwin
+//
+//  day8.swift
+//
+//
+//  Created by Fabio Mauersberger on 08.12.21.
+//
+
+
 extension Day {
     
     func day8part1() -> Int {

@@ -51,4 +51,16 @@ final class AdventOfCodeTests: XCTestCase {
         XCTAssertEqual(day.execute(part: 1), 352)
         XCTAssertEqual(day.execute(part: 2), 936117)
     }
+    
+    func testDay9() {
+        let day = Day(9)
+        XCTAssertEqual(day.execute(part: 1), 456)
+        XCTAssertEqual(day.execute(part: 2), 1047744)
+    }
+    
+    func testDay10() {
+        let day = Day(10)
+        XCTAssertEqual(day.execute(part: 1), 344193)
+        XCTAssertEqual(day.execute(part: 2), 3241238967)
+    }
 }
