@@ -82,18 +82,17 @@ extension Day {
     
     func day9part2() -> Int {
         
-        let data = input
-        let lows = lows(in: data)
-        var sizes = [Int]()
+        let lows = lows(in: input)
+        
         var dataGrid = [Point: String]()
         
-        for (y, row) in data.enumerated() {
+        for (y, row) in input.enumerated() {
             for (x, val) in row.enumerated() {
                 dataGrid.updateValue(val.description, forKey: Point(x: x, y: y))
             }
         }
         
-        for low in lows.keys {
+        return lows.keys.map { low in
             var size = 0
             var checked = [Point]()
             var adjacents = [low]
@@ -109,10 +108,8 @@ extension Day {
                 }
                 adjacents = newAdjacents
             }
-            sizes.append(size)
-        }
-        
-        return sizes.sorted().reversed()[0..<3].reduce(1, *)
+            return size
+        }.sorted().reversed()[0..<3].reduce(1, *)
     }
 }
 
