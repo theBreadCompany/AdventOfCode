@@ -42,7 +42,7 @@ extension Day {
         for foldingPoint in folds {
             paper = fold(paper, at: foldingPoint)
         }
-        var table = Array(repeating: Array(repeating: ".", count: paper.map({$0.x}).max()!+1), count: paper.map({$0.x}).max()!+1)
+        var table = Array(repeating: Array(repeating: " ", count: paper.map({$0.x}).max()!+1), count: paper.map({$0.x}).max()!+1)
         for point in paper {
             table[point.y][point.x] = "#"
         }
