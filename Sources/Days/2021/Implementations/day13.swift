@@ -52,9 +52,8 @@ extension Day {
             table[point.y][point.x] = "#"
         }
         for row in table[...5] {
-            print(row)
+            print(row.joined(separator: ""))
         }
-        print("Use terminal width of >=195 to see the letters.")
         return paper.count
     }
     
