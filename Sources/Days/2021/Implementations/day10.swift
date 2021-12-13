@@ -10,7 +10,6 @@ import Foundation
 extension Day {
     
     func day10part1() -> Int {
-        //let correspondingEnd = ["(": ")", "[": "]", "{": "}", "<": ">"]
         let correspondingStart = [")": "(", "]": "[", "}": "{", ">": "<"]
         let data = input
         var corrupted = [String]()

@@ -51,9 +51,3 @@ extension Day {
         return Int(oxygen, radix: 2)!*Int(carbondioxide, radix: 2)!
     }
 }
-
-extension String {
-    subscript(pos: Int) -> String {
-        return Array(self)[pos].description
-    }
-}

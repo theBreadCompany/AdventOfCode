@@ -9,11 +9,6 @@ import Foundation
 
 extension Day {
     
-    fileprivate struct Point: Hashable {
-        var x: Int
-        var y: Int
-    }
-    
     fileprivate func parse(rawData: [String]) -> ([Point], [Point]) {
         return rawData.reduce(into: ([Point](), [Point]())) { (result, element) in
             if element.contains("=") {

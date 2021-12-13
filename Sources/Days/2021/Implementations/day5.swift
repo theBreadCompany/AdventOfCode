@@ -7,19 +7,19 @@
 
 import Foundation
 
-fileprivate func parse(_ rawData: [String]) -> [(CGPoint, CGPoint)] {
-    var points = [(CGPoint, CGPoint)]()
-    var pointStore = (CGPoint(), CGPoint())
-    for val in rawData {
-        let coordinates = val.replacingOccurrences(of: " ", with: "").components(separatedBy: "->").map({$0.split(separator: ",")})
-        pointStore.0 = CGPoint(x: Int(coordinates[0][0])!, y: Int(coordinates[0][1])!)
-        pointStore.1 = CGPoint(x: Int(coordinates[1][0])!, y: Int(coordinates[1][1])!)
-        points.append(pointStore)
-    }
-    return points
-}
-
 extension Day {
+    
+    fileprivate func parse(_ rawData: [String]) -> [(CGPoint, CGPoint)] {
+        var points = [(CGPoint, CGPoint)]()
+        var pointStore = (CGPoint(), CGPoint())
+        for val in rawData {
+            let coordinates = val.replacingOccurrences(of: " ", with: "").components(separatedBy: "->").map({$0.split(separator: ",")})
+            pointStore.0 = CGPoint(x: Int(coordinates[0][0])!, y: Int(coordinates[0][1])!)
+            pointStore.1 = CGPoint(x: Int(coordinates[1][0])!, y: Int(coordinates[1][1])!)
+            points.append(pointStore)
+        }
+        return points
+    }
     
     func day5part1() -> Int {
         
@@ -101,12 +101,5 @@ extension Day {
         let dangerousPoints = getDangerous(from: diagramData, warnAt: 2)
         //visualise(using: dangerousPoints, screensize: (360, 1000))
         return dangerousPoints.count
-    }
-}
-
-extension CGPoint: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(x)
-        hasher.combine(y)
     }
 }

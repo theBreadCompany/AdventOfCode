@@ -9,17 +9,6 @@ import Foundation
 
 extension Day {
     
-    fileprivate struct Point: Hashable {
-        
-        let x: Int
-        let y: Int
-        
-        func adjacent() -> [Point] {
-            return [Point(x: x+1, y: y), Point(x: x-1, y: y), Point(x: x, y: y+1), Point(x: x, y: y-1),
-                    Point(x: x+1, y: y+1), Point(x: x-1, y: y+1), Point(x: x+1, y: y-1), Point(x: x-1, y: y-1)]
-        }
-    }
-    
     fileprivate struct Octopus: Hashable, Equatable {
         let pos: Point
         var powerLevel: Int
@@ -83,3 +72,9 @@ extension Day {
     }
 }
 
+fileprivate extension Point {
+    func adjacent() -> [Point] {
+        return [Point(x: x+1, y: y), Point(x: x-1, y: y), Point(x: x, y: y+1), Point(x: x, y: y-1),
+                Point(x: x+1, y: y+1), Point(x: x-1, y: y+1), Point(x: x+1, y: y-1), Point(x: x-1, y: y-1)]
+    }
+}

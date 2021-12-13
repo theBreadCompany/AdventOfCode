@@ -9,16 +9,6 @@ import CoreGraphics
 
 extension Day {
     
-    fileprivate struct Point: Hashable {
-        
-        let x: Int
-        let y: Int
-        
-        func adjacent() -> [Point] {
-            return [Point(x: x+1, y: y), Point(x: x-1, y: y), Point(x: x, y: y+1), Point(x: x, y: y-1)]
-        }
-    }
-    
     fileprivate func lows(in data: [String]) -> [Point: Int] {
         var lows = [Point: Int]()
         for (i, d) in data.enumerated() {
@@ -113,18 +103,8 @@ extension Day {
     }
 }
 
-extension String {
-    func toArray() -> Array<String> {
-        return self.map({String($0)})
-    }
-    
-    func toInt() -> Int {
-        return Int(self)!
-    }
-}
-
-extension Substring {
-    func toArray() -> Array<String> {
-        return Array(self.map({String($0)}))
+fileprivate extension Point {
+    func adjacent() -> [Point] {
+        return [Point(x: x+1, y: y), Point(x: x-1, y: y), Point(x: x, y: y+1), Point(x: x, y: y-1)]
     }
 }
