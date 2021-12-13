@@ -17,7 +17,7 @@ public class Day: NSObject {
         self.input = []
     }
     
-    public func execute(part: Int) -> Int {
+    public func execute(part: Int) -> Any {
         self.readInput()
         switch value {
         case 1:

@@ -37,7 +37,7 @@ extension Day {
         return fold(paper, at: folds.first!).count
     }
     
-    func day13part2() -> Int {
+    func day13part2() -> String {
         var (paper, folds) = parse(rawData: input)
         for foldingPoint in folds {
             paper = fold(paper, at: foldingPoint)
@@ -46,10 +46,8 @@ extension Day {
         for point in paper {
             table[point.y][point.x] = "#"
         }
-        for row in table[...5] {
-            print(row.joined(separator: ""))
-        }
-        return paper.count
+        
+        return table[...5].map({$0.joined()}).joined(separator: "\n")
     }
     
 }
