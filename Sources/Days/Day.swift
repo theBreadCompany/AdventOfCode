@@ -17,7 +17,7 @@ public class Day: NSObject {
         self.input = []
     }
     
-    public func execute(part: Int) -> Any {
+    public func execute(part: Int) -> CustomStringConvertible {
         self.readInput()
         switch value {
         case 1:
@@ -46,15 +46,20 @@ public class Day: NSObject {
             return part == 1 ? self.day12part1() : self.day12part2()
         case 13:
             return part == 1 ? self.day13part1() : self.day13part2()
+        case 14:
+            return part == 1 ? self.day14part1() : self.day14part2()
+        case 15:
+            return part == 1 ? self.day15part1() : self.day15part2()
+        case 16:
+            return part == 1 ? self.day16part1() : self.day16part2()
         default:
-            fatalError("Day \(value) and/or \(part) not existing")
+            fatalError("Day \(value) and/or part \(part) not existing")
         }
     }
     
     private func readInput(){
         do {
             self.input = try String(contentsOfFile: Bundle.module.path(forResource: "day\(value)", ofType: "txt")!)
-            //.trimmingCharacters(in: .whitespacesAndNewlines)
             .split(separator: "\n")
             .map({String($0)})
         } catch {

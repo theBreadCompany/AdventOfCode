@@ -87,4 +87,28 @@ final class AdventOfCodeTests: XCTestCase {
         "#    # #  # #  #    #  # #    # #  # # \n" +
         "#### #  # #  # #### ###  #    #  # #  #")
     }
+    
+    func testDay14() {
+        let day = Day(14)
+        XCTAssertEqual(day.execute(part: 1) as! Int, 2590)
+        XCTAssertEqual(day.execute(part: 2) as! Int, 2875665202438)
+    }
+    
+    func testDay15() {
+        let day = Day(15)
+        XCTAssertEqual(day.execute(part: 1) as! Int, 581)
+        XCTAssertEqual(day.execute(part: 2) as! Int, 2916)
+    }
+    
+    func testDay16() {
+        let day = Day(16)
+        XCTAssertEqual(day.execute(part: 1) as! Int, 860)
+        XCTAssertEqual(day.execute(part: 2) as! Int, 470949537659)
+    }
+    
+    func testDay17() {
+        let day = Day(17)
+        XCTAssertEqual(day.execute(part: 1) as! Int, 30628)
+        XCTAssertEqual(day.execute(part: 2) as! Int, 4433)
+    }
 }

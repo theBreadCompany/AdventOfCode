@@ -7,6 +7,46 @@
 
 import Foundation
 
+struct Point: Hashable {
+    var x: Int
+    var y: Int
+}
+
+struct CharPair: Hashable, Equatable {
+    var left: Character
+    var right: Character
+    
+    init(_ l: Character, _ r: Character) {
+        left = l
+        right = r
+    }
+}
+
+extension String {
+    func toArray() -> Array<String> {
+        return self.map({String($0)})
+    }
+        func toInt() -> Int! {
+            return Int(self)!
+        }
+}
+
+extension String {
+    public func isLowercase() -> Bool {
+        return self == self.lowercased()
+    }
+    public func isUppercase() -> Bool {
+        return self == self.uppercased()
+    }
+}
+
+extension String {
+    public func adjacentPairs() -> [(Character, Character)] {
+        let pairs = Array(0...self.count-2).map({(Character(self[$0]), Character(self[$0+1]))})
+        return pairs
+    }
+}
+
 extension String {
     subscript(pos: Int) -> String {
         return Array(self)[pos].description
@@ -17,21 +57,6 @@ extension CGPoint: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(x)
         hasher.combine(y)
-    }
-}
-
-struct Point: Hashable {
-    var x: Int
-    var y: Int
-}
-
-extension String {
-    func toArray() -> Array<String> {
-        return self.map({String($0)})
-    }
-    
-    func toInt() -> Int {
-        return Int(self)!
     }
 }
 
@@ -61,11 +86,12 @@ extension Array {
     }
 }
 
-extension String {
-    public func isLowercase() -> Bool {
-        return self == self.lowercased()
+extension Array {
+    public static func +=(lhs: inout Array<Element>, rhs: Element) {
+        lhs.append(rhs)
     }
-    public func isUppercase() -> Bool {
-        return self == self.uppercased()
-    }
+}
+
+extension Int {
+    func gauss(_ n: Int) -> Int { return ((self*(self+n))/2) }
 }
