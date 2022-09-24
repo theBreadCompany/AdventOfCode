@@ -7,9 +7,11 @@
 
 import Foundation
 
+@objc
 extension Day {
     
-    func day10part1() -> Int {
+    @objc
+    func year2021day10part1() -> NSNumber {
         let correspondingStart = [")": "(", "]": "[", "}": "{", ">": "<"]
         let data = input
         var corrupted = [String]()
@@ -28,12 +30,13 @@ extension Day {
                 }
             }
         }
-        return corrupted.reduce(0, { (start, entry) in
+        return NSNumber(value: corrupted.reduce(0, { (start, entry) in
             start + (entry == ")" ? 3 : (entry == "]" ? 57 : (entry == "}" ? 1197 : (entry == ">" ? 25137 : 0))))
-        })
+        }))
     }
     
-    func day10part2() -> Int {
+    @objc
+    func year2021day10part2() -> NSNumber {
         let correspondingStart = [")": "(", "]": "[", "}": "{", ">": "<"]
         let correspondingEnd = ["(": ")", "[": "]", "{": "}", "<": ">"]
         let data = input
@@ -74,6 +77,6 @@ extension Day {
             }
             scores.append(score)
         }
-        return scores.sorted()[Int(Double(scores.count)/2-0.5)]
+        return NSNumber(value: scores.sorted()[Int(Double(scores.count)/2-0.5)])
     }
 }

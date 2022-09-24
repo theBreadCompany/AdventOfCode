@@ -21,7 +21,8 @@ extension Day {
         return points
     }
     
-    func day5part1() -> Int {
+    @objc
+    func year2021day5part1() -> NSNumber {
         
         func diagramize(data: [(CGPoint, CGPoint)]) -> [CGPoint: Int] {
             var ventPositions = [CGPoint: Int]()
@@ -58,10 +59,11 @@ extension Day {
         let data = parse(input)
         let diagramData = diagramize(data: data)
         let dangerousPoints = getDangerous(from: diagramData, warnAt: 2)
-        return dangerousPoints.count
+        return NSNumber(value: dangerousPoints.count)
     }
 
-    func day5part2() -> Int {
+    @objc
+    func year2021day5part2() -> NSNumber {
         
         func diagramize(data: [(CGPoint, CGPoint)]) -> [CGPoint: Int] {
             var ventPositions = [CGPoint: Int]()
@@ -100,6 +102,6 @@ extension Day {
         let diagramData = diagramize(data: data)
         let dangerousPoints = getDangerous(from: diagramData, warnAt: 2)
         //visualise(using: dangerousPoints, screensize: (360, 1000))
-        return dangerousPoints.count
+        return NSNumber(value: dangerousPoints.count)
     }
 }

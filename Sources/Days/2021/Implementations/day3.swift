@@ -7,9 +7,10 @@
 
 import Foundation
 
+@objc
 extension Day {
     
-    func day3part1() -> Int {
+    func year2021day3part1() -> NSNumber {
         let binNums = input.compactMap { $0.contains("0") ? $0 : nil }
         var gammaBins = Array(repeating: false, count: binNums.first!.count)
 
@@ -22,10 +23,10 @@ extension Day {
             }
             gammaBins[i] = freqOfTrue > binNums.count / 2 ? true : false
         }
-        return Int(gammaBins.map({$0 ? "1" : "0"}).joined(separator: ""), radix: 2)!*Int(gammaBins.map({!$0 ? "1" : "0"}).joined(separator: ""), radix: 2)!
+        return NSNumber(value: Int(gammaBins.map({$0 ? "1" : "0"}).joined(separator: ""), radix: 2)!*Int(gammaBins.map({!$0 ? "1" : "0"}).joined(separator: ""), radix: 2)!)
     }
     
-    func day3part2() -> Int {
+    func year2021day3part2() -> NSNumber {
         let binNums = input.filter { $0.contains("0") }
         var oxygen = ""
         var carbondioxide = oxygen
@@ -48,6 +49,6 @@ extension Day {
                 }
             }
         }
-        return Int(oxygen, radix: 2)!*Int(carbondioxide, radix: 2)!
+        return NSNumber(value: Int(oxygen, radix: 2)!*Int(carbondioxide, radix: 2)!)
     }
 }

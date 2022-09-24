@@ -7,9 +7,10 @@
 
 import Foundation
 
+@objc
 extension Day {
     
-    func day6part1() -> Int {
+    func year2021day6part1() -> NSNumber {
         struct Fish: Hashable {
             var countdown: UInt8
             
@@ -36,11 +37,11 @@ extension Day {
                 }
             }
         }
-        return fish.count
+        return NSNumber(value: fish.count)
 
     }
     
-    func day6part2() -> Int {
+    func year2021day6part2() -> NSNumber {
         let input = input.first!
         let data = input.split(separator: ",")
 
@@ -63,7 +64,7 @@ extension Day {
                 }
             }
         }
-        return fish.values.reduce(0, +)
+        return NSNumber(value: fish.values.reduce(0, +))
 
     }
 }

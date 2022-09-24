@@ -28,5 +28,5 @@ if CommandLine.arguments.count == 4 {
 }
 
 print("Running part \(part) of day \(day), year \(year)")
-let puzzleDay = Day(day)
+let puzzleDay = Day(day, inYear: year)
 print(puzzleDay.execute(part: part))

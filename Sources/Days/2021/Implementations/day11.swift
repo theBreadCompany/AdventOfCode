@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 extension Day {
     
     fileprivate struct Octopus: Hashable, Equatable {
@@ -49,7 +50,8 @@ extension Day {
         return (flashed.count, dataGrid)
     }
     
-    func day11part1() -> Int {
+    @objc
+    func year2021day11part1() -> NSNumber {
          
         var dataGrid = parse(input)
         var flashes = 0
@@ -58,17 +60,18 @@ extension Day {
             flashes += newValues.0
             dataGrid = newValues.1
         }
-        return flashes
+        return NSNumber(value: flashes)
     }
     
-    func day11part2() -> Int {
+    @objc
+    func year2021day11part2() -> NSNumber {
         var dataGrid = parse(input)
         var steps = 0
         while !dataGrid.allSatisfy({$0.powerLevel == 0}) {
             dataGrid = load(grid: dataGrid).1
             steps += 1
         }
-        return steps
+        return NSNumber(value: steps)
     }
 }
 

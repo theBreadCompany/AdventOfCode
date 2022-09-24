@@ -7,13 +7,14 @@
 
 import Foundation
 
+@objc
 extension Day {
     
     fileprivate struct CrabMarine: Hashable {
         let id = UUID()
     }
     
-    func day7part1() -> Int {
+    func year2021day7part1() -> NSNumber {
         
         let data = input.first!.split(separator: ",").map({Int($0.description)!})
         let map = data.reduce(into: [Int: [CrabMarine]]()) { $0[$1] = ($0[$1] ?? []) + [CrabMarine()] }
@@ -29,10 +30,10 @@ extension Day {
             }
         }
         
-        return results.filter({$0.key > 0}).values.min()!
+        return NSNumber(value: results.filter({$0.key > 0}).values.min()!)
     }
     
-    func day7part2() -> Int {
+    func year2021day7part2() -> NSNumber {
         
         let data = input.first!.split(separator: ",").map({Int($0.description)!})
         let map = data.reduce(into: [Int: [CrabMarine]]()) { $0[$1] = ($0[$1] ?? []) + [CrabMarine()] }
@@ -49,6 +50,6 @@ extension Day {
             }
         }
         
-        return results.filter({$0.key > 0}).values.min()!
+        return NSNumber(value: results.filter({$0.key > 0}).values.min()!)
     }
 }

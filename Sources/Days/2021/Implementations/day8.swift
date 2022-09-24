@@ -5,10 +5,12 @@
 //  Created by Fabio Mauersberger on 08.12.21.
 //
 
+import Foundation
 
+@objc
 extension Day {
     
-    func day8part1() -> Int {
+    func year2021day8part1() -> NSNumber {
         let outVals = input.compactMap({$0.split(separator: "|").last!})
         
         var count = 0
@@ -19,10 +21,10 @@ extension Day {
                 }
             }
         }
-        return count
+        return NSNumber(value: count)
     }
     
-    func day8part2() -> Int {
+    func year2021day8part2() -> NSNumber {
         
         func solve(_ s: [String], using hints: [String]) -> Int {
             
@@ -58,7 +60,7 @@ extension Day {
             count += solve(i.split(separator: "|").last!.split(separator: " ").map({(String($0))}), using: i.split(separator: "|").first!.split(separator: " ").map({String($0)}))
         }
         
-        return count
+        return NSNumber(value: count)
     }
 }
 

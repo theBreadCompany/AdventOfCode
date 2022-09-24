@@ -7,6 +7,7 @@
 
 import Foundation
 
+@objc
 extension Day {
     
     fileprivate func parse(rawData: [String]) -> [String: Set<String>] {
@@ -30,13 +31,15 @@ extension Day {
         return paths
     }
     
-    func day12part1() -> Int {
+    @objc
+    func year2021day12part1() -> NSNumber {
         let caves = parse(rawData: input)
-        return routes(in: caves, startingAt: "start", doubleAllowed: false, alreadyVisited: ["start"])
+        return NSNumber(value: routes(in: caves, startingAt: "start", doubleAllowed: false, alreadyVisited: ["start"]))
     }
     
-    func day12part2() -> Int {
+    @objc
+    func year2021day12part2() -> NSNumber {
         let caves = parse(rawData: input)
-        return routes(in: caves, startingAt: "start", doubleAllowed: true, alreadyVisited: ["start"])
+        return NSNumber(value: routes(in: caves, startingAt: "start", doubleAllowed: true, alreadyVisited: ["start"]))
     }
 }

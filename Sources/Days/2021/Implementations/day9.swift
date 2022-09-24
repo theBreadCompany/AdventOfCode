@@ -6,6 +6,8 @@
 //
 
 import CoreGraphics
+import Foundation
+
 
 extension Day {
     
@@ -63,14 +65,16 @@ extension Day {
         return lows
     }
     
-    func day9part1() -> Int {
+    @objc
+    func year2021day9part1() -> NSNumber {
         let data = input
         let lows = lows(in: data)
         
-        return lows.values.map({$0+1}).reduce(0, +)
+        return NSNumber(value: lows.values.map({$0+1}).reduce(0, +))
     }
     
-    func day9part2() -> Int {
+    @objc
+    func year2021day9part2() -> NSNumber {
         
         let lows = lows(in: input)
         
@@ -82,7 +86,7 @@ extension Day {
             }
         }
         
-        return lows.keys.map { low in
+        return NSNumber(value: lows.keys.map { low in
             var size = 0
             var checked = [Point]()
             var adjacents = [low]
@@ -99,7 +103,7 @@ extension Day {
                 adjacents = newAdjacents
             }
             return size
-        }.sorted().reversed()[0..<3].reduce(1, *)
+        }.sorted().reversed()[0..<3].reduce(1, *))
     }
 }
 

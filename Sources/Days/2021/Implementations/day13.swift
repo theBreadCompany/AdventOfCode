@@ -32,12 +32,14 @@ extension Day {
         return Array(Set(paper))
     }
     
-    func day13part1() -> Int {
+    @objc
+    func year2021day13part1() -> NSNumber {
         let (paper, folds) = parse(rawData: input)
-        return fold(paper, at: folds.first!).count
+        return NSNumber(value: fold(paper, at: folds.first!).count)
     }
     
-    func day13part2() -> String {
+    @objc
+    func year2021day13part2() -> NSString {
         var (paper, folds) = parse(rawData: input)
         for foldingPoint in folds {
             paper = fold(paper, at: foldingPoint)
@@ -47,7 +49,7 @@ extension Day {
             table[point.y][point.x] = "#"
         }
         
-        return table[...5].map({$0.joined()}).joined(separator: "\n")
+        return NSString(string: table[...5].map({$0.joined()}).joined(separator: "\n"))
     }
     
 }

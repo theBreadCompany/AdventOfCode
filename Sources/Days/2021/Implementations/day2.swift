@@ -7,9 +7,10 @@
 
 import Foundation
 
+@objc
 extension Day {
     
-    func day2part1() -> Int {
+    func year2021day2part1() -> NSNumber {
         var hPos = 0
         var depth = 0
         
@@ -24,10 +25,10 @@ extension Day {
                 depth += Int(input[i].split(separator: " ").last!.description)!
             }
         }
-        return hPos*depth
+        return NSNumber(value: hPos*depth)
     }
     
-    func day2part2() -> Int {
+    func year2021day2part2() -> NSNumber {
         var hPos = 0
         var depth = 0
         var aim = 0
@@ -45,6 +46,6 @@ extension Day {
             }
         }
         
-        return hPos*depth
+        return NSNumber(value: hPos*depth)
     }
 }

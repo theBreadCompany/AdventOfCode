@@ -56,9 +56,10 @@ fileprivate func parseInput(rawData: [String]) -> ([Int], [[OrderedDictionary<In
     return (numbers, tables)
 }
 
+@objc
 extension Day {
     
-    func day4part1() -> Int {
+    func year2021day4part1() -> NSNumber {
         
         func calculateWinner(numbers: [Int], boards: [[OrderedDictionary<Int, Bool>]]) -> ([OrderedDictionary<Int, Bool>], Int) {
             var _boards = boards
@@ -95,11 +96,11 @@ extension Day {
         let (numbers, tables) = parseInput(rawData: input)
         let (winnerboard, winningNumber) = calculateWinner(numbers: numbers, boards: tables)
         let sumOfFalse = getScore(of: false, in: winnerboard, wonAfter: winningNumber)
-        return sumOfFalse
+        return NSNumber(value: sumOfFalse)
     }
     
 
-    func day4part2() -> Int {
+    func year2021day4part2() -> NSNumber {
         
         func calculateLooser(numbers: [Int], boards: [[OrderedDictionary<Int, Bool>]]) -> ([OrderedDictionary<Int, Bool>], Int) {
             var _boards = boards
@@ -144,7 +145,7 @@ extension Day {
         let (numbers, tables) = parseInput(rawData: input)
         let (winnerboard, winningNumber) = calculateLooser(numbers: numbers, boards: tables)
         let sumOfFalse = getScore(of: false, in: winnerboard, wonAfter: winningNumber)
-        return sumOfFalse
+        return NSNumber(value: sumOfFalse)
     }
 
 }

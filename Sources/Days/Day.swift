@@ -7,53 +7,30 @@
 
 import Foundation
 
+@objc
 public class Day: NSObject {
     
     let value: Int
+    let year: Int
     var input: [String]
     
-    public init(_ v: Int) {
+    public init(_ v: Int, inYear year: Int) {
         self.value = v
+        self.year = year
         self.input = []
     }
     
     public func execute(part: Int) -> CustomStringConvertible {
         self.readInput()
-        switch value {
-        case 1:
-            return part == 1 ? self.day1part1() : self.day1part2()
-        case 2:
-            return part == 1 ? self.day2part1() : self.day2part2()
-        case 3:
-            return part == 1 ? self.day3part1() : self.day3part2()
-        case 4:
-            return part == 1 ? self.day4part1() : self.day4part2()
-        case 5:
-            return part == 1 ? self.day5part1() : self.day5part2()
-        case 6:
-            return part == 1 ? self.day6part1() : self.day6part2()
-        case 7:
-            return part == 1 ? self.day7part1() : self.day7part2()
-        case 8:
-            return part == 1 ? self.day8part1() : self.day8part2()
-        case 9:
-            return part == 1 ? self.day9part1() : self.day9part2()
-        case 10:
-            return part == 1 ? self.day10part1() : self.day10part2()
-        case 11:
-            return part == 1 ? self.day11part1() : self.day11part2()
-        case 12:
-            return part == 1 ? self.day12part1() : self.day12part2()
-        case 13:
-            return part == 1 ? self.day13part1() : self.day13part2()
-        case 14:
-            return part == 1 ? self.day14part1() : self.day14part2()
-        case 15:
-            return part == 1 ? self.day15part1() : self.day15part2()
-        case 16:
-            return part == 1 ? self.day16part1() : self.day16part2()
-        default:
+        guard let unmanaged = self.perform(Selector("year\(year)day\(value)part\(part)")) else {
             fatalError("Day \(value) and/or part \(part) not existing")
+        }
+        if let value = unmanaged.takeUnretainedValue() as? NSNumber {
+            return Int(truncating: value)
+        } else if let value = unmanaged.takeUnretainedValue() as? NSString {
+            return String(value)
+        } else {
+            fatalError("Found unknown result for day \(value) part \(part)!")
         }
     }
     
