@@ -8,9 +8,9 @@
 import Foundation
 
 @objc
-extension Day {
+extension Y2021 {
     
-    func year2021day8part1() -> NSNumber {
+    func day8part1() -> NSNumber {
         let outVals = input.compactMap({$0.split(separator: "|").last!})
         
         var count = 0
@@ -24,7 +24,7 @@ extension Day {
         return NSNumber(value: count)
     }
     
-    func year2021day8part2() -> NSNumber {
+    func day8part2() -> NSNumber {
         
         func solve(_ s: [String], using hints: [String]) -> Int {
             

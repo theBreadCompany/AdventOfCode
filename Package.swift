@@ -1,5 +1,7 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
+//
+// Yes, these module names are cursed, but see... just read the 'i' of 'i2021' as 'iteration 2021' and ignore it lol
 
 import PackageDescription
 
@@ -14,9 +16,15 @@ let package = Package(
             dependencies: ["Days"]),
         .target(
             name: "Days",
-            resources: Array(1...14).map({.process("2021/Input/day\($0).txt")})),
+            dependencies: ["Year", "i2021"]),
+        .target(
+            name: "Year"),
+        .target(
+            name: "i2021",
+            dependencies: ["Year"],
+            resources: Array(1...14).map({.process("Input/day\($0).txt")})),
         .testTarget(
             name: "AdventOfCodeTests",
-            dependencies: ["AdventOfCode", "Days"]),
+            dependencies: ["AdventOfCode", "Days", "i2021"]),
     ]
 )

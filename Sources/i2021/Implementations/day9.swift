@@ -8,8 +8,7 @@
 import CoreGraphics
 import Foundation
 
-
-extension Day {
+extension Y2021 {
     
     fileprivate func lows(in data: [String]) -> [Point: Int] {
         var lows = [Point: Int]()
@@ -66,7 +65,7 @@ extension Day {
     }
     
     @objc
-    func year2021day9part1() -> NSNumber {
+    func day9part1() -> NSNumber {
         let data = input
         let lows = lows(in: data)
         
@@ -74,7 +73,7 @@ extension Day {
     }
     
     @objc
-    func year2021day9part2() -> NSNumber {
+    func day9part2() -> NSNumber {
         
         let lows = lows(in: input)
         

@@ -8,7 +8,7 @@
 import Foundation
 
 
-extension Day {
+extension Y2021 {
     
     fileprivate struct Octopus: Hashable, Equatable {
         let pos: Point
@@ -51,7 +51,7 @@ extension Day {
     }
     
     @objc
-    func year2021day11part1() -> NSNumber {
+    func day11part1() -> NSNumber {
          
         var dataGrid = parse(input)
         var flashes = 0
@@ -64,7 +64,7 @@ extension Day {
     }
     
     @objc
-    func year2021day11part2() -> NSNumber {
+    func day11part2() -> NSNumber {
         var dataGrid = parse(input)
         var steps = 0
         while !dataGrid.allSatisfy({$0.powerLevel == 0}) {

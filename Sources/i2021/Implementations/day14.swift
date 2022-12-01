@@ -7,7 +7,7 @@
 
 import AppKit
 
-extension Day {
+extension Y2021 {
     
     fileprivate func parse(rawData: [String]) -> ([Character:Int], [[Character]:Int], [[Character]: Character]) {
         return (rawData.first!.reduce(into: [Character:Int]()) { (result, element) in
@@ -35,12 +35,12 @@ extension Day {
     }
     
     @objc
-    func year2021day14part1() -> NSNumber {
+    func day14part1() -> NSNumber {
         return NSNumber(value: react(input, count: 10))
     }
     
     @objc
-    func year2021day14part2() -> NSNumber {
+    func day14part2() -> NSNumber {
         return NSNumber(value: react(input, count: 40))
     }
     

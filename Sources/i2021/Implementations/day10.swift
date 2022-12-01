@@ -8,10 +8,10 @@
 import Foundation
 
 @objc
-extension Day {
+extension Y2021 {
     
     @objc
-    func year2021day10part1() -> NSNumber {
+    func day10part1() -> NSNumber {
         let correspondingStart = [")": "(", "]": "[", "}": "{", ">": "<"]
         let data = input
         var corrupted = [String]()
@@ -36,7 +36,7 @@ extension Day {
     }
     
     @objc
-    func year2021day10part2() -> NSNumber {
+    func day10part2() -> NSNumber {
         let correspondingStart = [")": "(", "]": "[", "}": "{", ">": "<"]
         let correspondingEnd = ["(": ")", "[": "]", "{": "}", "<": ">"]
         let data = input

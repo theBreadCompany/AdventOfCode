@@ -57,9 +57,9 @@ fileprivate func parseInput(rawData: [String]) -> ([Int], [[OrderedDictionary<In
 }
 
 @objc
-extension Day {
+extension Y2021 {
     
-    func year2021day4part1() -> NSNumber {
+    func day4part1() -> NSNumber {
         
         func calculateWinner(numbers: [Int], boards: [[OrderedDictionary<Int, Bool>]]) -> ([OrderedDictionary<Int, Bool>], Int) {
             var _boards = boards
@@ -100,7 +100,7 @@ extension Day {
     }
     
 
-    func year2021day4part2() -> NSNumber {
+    func day4part2() -> NSNumber {
         
         func calculateLooser(numbers: [Int], boards: [[OrderedDictionary<Int, Bool>]]) -> ([OrderedDictionary<Int, Bool>], Int) {
             var _boards = boards

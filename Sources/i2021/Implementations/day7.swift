@@ -8,13 +8,13 @@
 import Foundation
 
 @objc
-extension Day {
+extension Y2021 {
     
     fileprivate struct CrabMarine: Hashable {
         let id = UUID()
     }
     
-    func year2021day7part1() -> NSNumber {
+    func day7part1() -> NSNumber {
         
         let data = input.first!.split(separator: ",").map({Int($0.description)!})
         let map = data.reduce(into: [Int: [CrabMarine]]()) { $0[$1] = ($0[$1] ?? []) + [CrabMarine()] }

@@ -8,9 +8,9 @@
 import Foundation
 
 @objc
-extension Day {
+extension Y2021 {
     
-    func year2021day1part1() -> NSNumber {
+    func day1part1() -> NSNumber {
         let numbers = input.compactMap { Int($0) }
         var increased = 0
         var oldNum = numbers.first!
@@ -24,7 +24,7 @@ extension Day {
     }
     
     @objc
-    func year2021day1part2() -> NSNumber {
+    func day1part2() -> NSNumber {
         let numbers = input.compactMap { Int($0) }
         var increased = 0
         var oldNum = numbers[1] + numbers[1+1] + numbers[1+2]

@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Day {
+extension Y2021 {
     
     fileprivate func parse(_ rawData: [String]) -> [(CGPoint, CGPoint)] {
         var points = [(CGPoint, CGPoint)]()
@@ -22,7 +22,7 @@ extension Day {
     }
     
     @objc
-    func year2021day5part1() -> NSNumber {
+    func day5part1() -> NSNumber {
         
         func diagramize(data: [(CGPoint, CGPoint)]) -> [CGPoint: Int] {
             var ventPositions = [CGPoint: Int]()
@@ -63,7 +63,7 @@ extension Day {
     }
 
     @objc
-    func year2021day5part2() -> NSNumber {
+    func day5part2() -> NSNumber {
         
         func diagramize(data: [(CGPoint, CGPoint)]) -> [CGPoint: Int] {
             var ventPositions = [CGPoint: Int]()

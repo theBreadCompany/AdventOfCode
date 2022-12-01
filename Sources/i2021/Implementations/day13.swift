@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Day {
+extension Y2021 {
     
     fileprivate func parse(rawData: [String]) -> ([Point], [Point]) {
         return rawData.reduce(into: ([Point](), [Point]())) { (result, element) in
@@ -33,13 +33,13 @@ extension Day {
     }
     
     @objc
-    func year2021day13part1() -> NSNumber {
+    func day13part1() -> NSNumber {
         let (paper, folds) = parse(rawData: input)
         return NSNumber(value: fold(paper, at: folds.first!).count)
     }
     
     @objc
-    func year2021day13part2() -> NSString {
+    func day13part2() -> NSString {
         var (paper, folds) = parse(rawData: input)
         for foldingPoint in folds {
             paper = fold(paper, at: foldingPoint)

@@ -8,7 +8,7 @@
 import Foundation
 
 @objc
-extension Day {
+extension Y2021 {
     
     fileprivate func parse(rawData: [String]) -> [String: Set<String>] {
         return rawData.reduce(into: [String: Set<String>]()) { result, line in
@@ -32,13 +32,13 @@ extension Day {
     }
     
     @objc
-    func year2021day12part1() -> NSNumber {
+    func day12part1() -> NSNumber {
         let caves = parse(rawData: input)
         return NSNumber(value: routes(in: caves, startingAt: "start", doubleAllowed: false, alreadyVisited: ["start"]))
     }
     
     @objc
-    func year2021day12part2() -> NSNumber {
+    func day12part2() -> NSNumber {
         let caves = parse(rawData: input)
         return NSNumber(value: routes(in: caves, startingAt: "start", doubleAllowed: true, alreadyVisited: ["start"]))
     }

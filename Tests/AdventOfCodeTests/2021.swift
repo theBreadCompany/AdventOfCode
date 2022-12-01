@@ -9,9 +9,11 @@ import Foundation
 import XCTest
 import Days
 
-let year = 2021
-
 fileprivate extension AdventOfCodeTests {
+    
+    var year: Int {
+        2021
+    }
     
     func testDay1() {
         let day = Day(1, inYear: year)
