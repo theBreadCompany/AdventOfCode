@@ -16,13 +16,17 @@ let package = Package(
             dependencies: ["Days"]),
         .target(
             name: "Days",
-            dependencies: ["Year", "i2021"]),
+            dependencies: ["Year", "i2021", "i2022"]),
         .target(
             name: "Year"),
         .target(
             name: "i2021",
             dependencies: ["Year"],
             resources: Array(1...14).map({.process("Input/day\($0).txt")})),
+        .target(
+            name: "i2022",
+            dependencies: ["Year"],
+            resources: [1].map({.process("Input/day\($0).txt")})),
         .testTarget(
             name: "AdventOfCodeTests",
             dependencies: ["AdventOfCode", "Days", "i2021"]),

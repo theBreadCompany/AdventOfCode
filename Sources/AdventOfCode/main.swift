@@ -11,7 +11,7 @@ var day = 0
 var part = 0
 
 if CommandLine.arguments.count == 4 {
-    if let y = Int(CommandLine.arguments[1]), 2020 < y && y < 2022 {
+    if let y = Int(CommandLine.arguments[1]), 2020 < y && y < 2023 {
         year = y
     }
     if let d = Int(CommandLine.arguments[2]), 0 < d && d < 26 {

@@ -8,6 +8,7 @@
 import Foundation
 import Year
 import i2021
+import i2022
 
 @objc
 public class Day: NSObject {
