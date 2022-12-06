@@ -1,8 +1,10 @@
-# AdventOfCode
+# AdventOfCode [2021, 2022]
 
-![](https://img.shields.io/badge/Language-Swift-orange) ![](https://img.shields.io/badge/days%20completed-17-green) ![](https://img.shields.io/badge/stars%20⭐-42-yellow)
+![](https://img.shields.io/badge/Language-Swift-orange) ![](https://img.shields.io/badge/days%20completed-17-green) ![](https://img.shields.io/badge/stars%20⭐-46-yellow)
 
 Welcome to my AoC repo, have fun looking at my bloated but working solutions.
+
+It contains the solutions for 2021 and 2022, neither are complete tho.
 
 You may want to run:
 - (all) tests via ```swift test``` or

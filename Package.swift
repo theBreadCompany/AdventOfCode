@@ -26,7 +26,7 @@ let package = Package(
         .target(
             name: "i2022",
             dependencies: ["Year"],
-            resources: Array(1...5).map({.process("Input/day\($0).txt")})),
+            resources: Array(1...6).map({.process("Input/day\($0).txt")})),
         .testTarget(
             name: "AdventOfCodeTests",
             dependencies: ["AdventOfCode", "Days"]),
