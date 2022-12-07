@@ -51,4 +51,10 @@ fileprivate extension AdventOfCodeTests {
         XCTAssertEqual(day.execute(part: 1) as! Int, 1480)
         XCTAssertEqual(day.execute(part: 2) as! Int, 2746)
     }
+    
+    func testDay7() {
+        let day = Day(7, inYear: year)
+        XCTAssertEqual(day.execute(part: 1) as! Int, 1886043)
+        XCTAssertEqual(day.execute(part: 2) as! Int, 3842121)
+    }
 }
