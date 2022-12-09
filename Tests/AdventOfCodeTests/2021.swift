@@ -9,7 +9,7 @@ import Foundation
 import XCTest
 import Days
 
-fileprivate extension AdventOfCodeTests {
+final class i2021Tests: XCTestCase {
     
     var year: Int {
         2021

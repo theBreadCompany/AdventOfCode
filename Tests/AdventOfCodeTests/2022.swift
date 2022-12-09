@@ -10,7 +10,7 @@ import XCTest
 import Days
 
 
-fileprivate extension AdventOfCodeTests {
+final class i2022Tests: XCTestCase {
     
     var year: Int {
         2022
@@ -37,7 +37,7 @@ fileprivate extension AdventOfCodeTests {
     func testDay4() {
         let day = Day(4, inYear: year)
         XCTAssertEqual(day.execute(part: 1) as! Int, 509)
-        XCTAssertEqual(day.execute(part: 2) as! Int, 570)
+        XCTAssertEqual(day.execute(part: 2) as! Int, 870)
     }
     
     func testDay5() {
