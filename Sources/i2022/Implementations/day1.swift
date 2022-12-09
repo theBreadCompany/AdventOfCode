@@ -21,7 +21,6 @@ extension Y2022 {
                 nc = 0
             }
         }
-        print(nmax, nc)
         return NSNumber(value: nmax)
     }
     

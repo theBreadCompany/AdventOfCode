@@ -50,7 +50,6 @@ extension Y2022 {
     func day7part2() -> NSNumber {
         let fs = parseFS()
         let unused = 70000000 - fs.last!.size
-        print(fs.count, unused)
         return NSNumber(value: fs.sorted(by: {$0.size < $1.size}).first(where: { $0.size + unused >= 30000000})?.size ?? -1)
     }
 }

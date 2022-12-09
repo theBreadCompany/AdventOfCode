@@ -21,10 +21,8 @@ extension Y2022 {
                 if sc.contains(letter) {
                     if letter.isLowercase {
                         score += UInt32(letter.asciiValue!) - 96
-                        print(letter, UInt32(letter.asciiValue!) - 96)
                     } else {
                         score += UInt32(letter.asciiValue!) - 38
-                        print(letter, UInt32(letter.asciiValue!) - 38)
                     }
                     break
                 }
