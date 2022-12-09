@@ -58,7 +58,6 @@ extension Y2022 {
                         || dy*dy.signum() == 2 && dx*dx.signum() >= 1
                     { knots[i].x += 1*(-dx.signum()); knots[i].y += 1*(-dy.signum()) }
                     
-                    print(line, knots, i, dx, dy)
                 }
                 visited.insert([knots.last!.x, knots.last!.y])
             }
