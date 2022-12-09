@@ -67,13 +67,3 @@ extension Y2022 {
     }
     
 }
-
-@objc class Point: NSObject {
-    init(x: Int, y: Int) {
-        self.x = x
-        self.y = y
-    }
-    
-    var x: Int
-    var y: Int
-}
