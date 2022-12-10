@@ -63,4 +63,24 @@ final class i2022Tests: XCTestCase {
         XCTAssertEqual(day.execute(part: 1) as! Int, 1818)
         XCTAssertEqual(day.execute(part: 2) as! Int, 368368)
     }
+    
+    func testDay9() {
+        let day = Day(9, inYear: year)
+        XCTAssertEqual(day.execute(part: 1) as! Int, 6236)
+        XCTAssertEqual(day.execute(part: 2) as! Int, 2449)
+    }
+    
+    func testDay10() {
+        let day = Day(9, inYear: year)
+        XCTAssertEqual(day.execute(part: 1) as! Int, 17940)
+        XCTAssertEqual(day.execute(part: 2) as! String,
+                       """
+                       ####..##..###...##....##.####...##.####.
+                       ...#.#..#.#..#.#..#....#.#.......#....#.
+                       ..#..#....###..#..#....#.###.....#...#..
+                       .#...#....#..#.####....#.#.......#..#...
+                       #....#..#.#..#.#..#.#..#.#....#..#.#....
+                       ####..##..###..#..#..##..#.....##..####.
+                       """)
+    }
 }
