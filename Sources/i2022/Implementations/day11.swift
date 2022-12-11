@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Int2X
 
 @objc
 extension Y2022 {

@@ -10,9 +10,6 @@ let package = Package(
     products: [
         .executable(name: "AdventOfCode", targets: ["AdventOfCode"])
     ],
-    dependencies: [
-        .package(url: "https://github.com/attaswift/BigInt", from: "5.0.0") // kekw
-    ],
     targets: [
         .target(
             name: "AdventOfCode",
