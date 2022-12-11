@@ -25,7 +25,7 @@ extension Y2022 {
         }
         
         override var description: String {
-            "(<Monkey> items: \(items), inspections: \(inspections)"
+            "(<Monkey> items: \(items), inspections: \(inspections))"
         }
     }
     
