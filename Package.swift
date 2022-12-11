@@ -10,6 +10,9 @@ let package = Package(
     products: [
         .executable(name: "AdventOfCode", targets: ["AdventOfCode"])
     ],
+    dependencies: [
+        .package(url: "https://github.com/attaswift/BigInt", from: "5.0.0") // kekw
+    ],
     targets: [
         .target(
             name: "AdventOfCode",
@@ -25,8 +28,8 @@ let package = Package(
             resources: Array(1...14).map({.process("Input/day\($0).txt")})),
         .target(
             name: "i2022",
-            dependencies: ["Year"],
-            resources: Array(1...10).map({.process("Input/day\($0).txt")})),
+            dependencies: ["Year", "BigInt"],
+            resources: Array(1...11).map({.process("Input/day\($0).txt")})),
         .testTarget(
             name: "AdventOfCodeTests",
             dependencies: ["AdventOfCode", "Days"]),

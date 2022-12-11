@@ -83,4 +83,10 @@ final class i2022Tests: XCTestCase {
                        ####..##..###..#..#..##..#.....##..####.
                        """)
     }
+    
+    func testDay11() {
+        let day = Day(11, inYear: year)
+        XCTAssertEqual(day.execute(part: 1) as! Int, 51075)
+        XCTAssertEqual(day.execute(part: 2) as! Int, 11741456163)
+    }
 }
